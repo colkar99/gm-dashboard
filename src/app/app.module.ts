@@ -16,7 +16,7 @@ import { FusionChartsModule } from 'angular-fusioncharts';
 // Import FusionCharts library and chart modules
 import * as FusionCharts from 'fusioncharts';
 import * as Charts from 'fusioncharts/fusioncharts.charts';
- 
+ import {DragDropModule} from '@angular/cdk/drag-drop'
 // For Powercharts , Widgets, and Maps
 // import * as PowerCharts from 'fusioncharts/fusioncharts.powercharts';
 // import * as Widgets from 'fusioncharts/fusioncharts.widgets';
@@ -50,7 +50,8 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme);
     MatNativeDateModule,
     MatInputModule,
     MatSelectModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

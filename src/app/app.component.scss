@@ -103,12 +103,12 @@ li::before {
     bottom: -45%;
     color:#5b5b5b;
 }
-.progress {
-    height: 10px;
-    width: 125%;
-    margin-top: 20%;
-    margin-left: 19%;
-}
+// .progress {
+//     height: 10px;
+//     width: 125%;
+//     margin-top: 20%;
+//     margin-left: 19%;
+// }
   
   .progress-bar {
   background: -webkit-linear-gradient(left, #33156d 0%,#f282bc 100%); /* Chrome10-25,Safari5.1-6 */
@@ -156,6 +156,7 @@ li::before {
     color:white;
     border-radius: 14px;
     font-size: 15px;
+    margin-right: 5%;
 }
 .mat-form-field-flex {
     border-radius: 19px !important;
@@ -164,3 +165,89 @@ li::before {
 .raphael-group-134-creditgroup{
     display: none;
 }
+
+@media (min-width: 1281px) {
+  
+    .progress {
+        height: 10px;
+        width: 125%;
+        margin-top: 20%;
+        margin-left: 19%;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+  
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    
+    .progress {
+        height: 10px;
+        width: 125%;
+        margin-top: 20%;
+        margin-left: 19%;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .progress {
+        height: 10px;
+        // width: 125%;
+        // margin-top: 20%;
+        // margin-left: 19%;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    
+    .progress {
+        height: 10px;
+        // width: 125%;
+        // margin-top: 20%;
+        // margin-left: 19%;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  
+  @media (min-width: 481px) and (max-width: 767px) {
+    
+    .progress {
+        height: 10px;
+       
+    }
+    
+  }
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+    
+    .progress {
+        height: 10px;
+       
+    }
+    
+  }

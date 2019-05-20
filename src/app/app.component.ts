@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-
+import {CdkDragDrop, moveItemInArray,transferArrayItem} from '@angular/cdk/drag-drop';
 declare var $: any;
 const data = {
   chart: {
@@ -280,27 +280,65 @@ export class AppComponent implements OnInit{
     temp[0].clicked = true
   }
   //////line chart
-  width = 550;
-  height = 400;
+  // width = 550;
+  // height = 400;
+  width="100%"
+  height=400;
   type = "area2d";
   dataFormat = "json";
   dataSource = data;
   ///pie
-  Piewidth = 400;
+  Piewidth = "100%";
   Pieheight = 400;
   Pietype = "doughnut3d";
   PiedataFormat = "json";
   PiedataSource = Piedata;
  // Bubble chart
- bubblewidth = 1200;
+ bubblewidth = "100%";
  bubbleheight = 400;
  bubbletype = "bubble";
  bubbledataFormat = "json";
  bubbledataSource = bubbleData;
-
+ timePeriods = [
+  "<h5 class='head-tag'>Most recent file uploaded</h5><div class='notice notice-success' *ngFor='let item of noticeData; let i = index'><span class='notice-name' [innerHTML]='item.name'></span><span class='pull-right notice-ago'>{{item.timeAgo}}</span><p class='notice-ptag'>{{item.content}}</p></div><div class='text-center' style='margin-bottom:5px;'><a class='notice-atag' href='#'>Show more</a></div>",
+  '<h5 class="head-tag">Client Access</h5><div class="row"><div class="col-md-6" *ngFor="let item of clientAccess; let i = index"><div class="col-md-12"><span style="color:gray;font-size:12px;">Number of Exceptions</span></div><div class="row" style="padding:8px 0px 8px 0px;"><div class="col-md-6"><div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"aria-valuemax="100" style="width: 100%;"></div></div></div><div class="col-md-6"><H5 class="center-card-htag">9,000</H5></div></div></div></div>',
+  '<h5 class="head-tag">Report calender</h5><div class="notice notice-success" *ngFor="let item of reportCalender;let i = index"><span class="notice-name">{{item.event}}</span><span class="pull-right notice-ago">{{item.timeLeft}}</span><p class="notice-ptag2">{{item.dateTime}}</p></div><div class="text-center" style="margin-bottom:5px;"><a class="notice-atag" href="#">Show more</a></div>',
+  
+];
   constructor() { }
 
     ngOnInit(){
-
+     let one =  document.getElementById('get1').innerHTML
+     console.log("one",one)
     }
+
+    drop(event: CdkDragDrop<string[]>) {
+     console.log(event)
+     console.log("fhj","get"+(event.previousIndex+1))
+    // console.log("hello + ",document.getElementById("get"+event.previousIndex).innerHTML)
+    // moveItemInArray(this.timePeriods, event.previousIndex, event.currentIndex);
+    let x = document.getElementById("get"+(event.previousIndex+1)).innerHTML;
+    let y = document.getElementById("get"+(event.currentIndex+1)).innerHTML;
+     console.log(
+       {x:x,y:y}
+     )
+     document.getElementById("get"+(event.previousIndex+1)).innerHTML = y;
+     document.getElementById("get"+(event.currentIndex+1)).innerHTML = x; 
+    }
+
+    drop1(event: CdkDragDrop<string[]>) {
+      console.log(event)
+      console.log("fhj","get"+(event.previousIndex+1))
+     // console.log("hello + ",document.getElementById("get"+event.previousIndex).innerHTML)
+     // moveItemInArray(this.timePeriods, event.previousIndex, event.currentIndex);
+     let x = document.getElementById("get"+(event.previousIndex+4)).innerHTML;
+     let y = document.getElementById("get"+(event.currentIndex+4)).innerHTML;
+      console.log(
+        {x:x,y:y}
+      )
+      document.getElementById("get"+(event.previousIndex+4)).innerHTML = y;
+      document.getElementById("get"+(event.currentIndex+4)).innerHTML = x; 
+     }
 }
+
+
